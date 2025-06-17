@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0 0 0 0;
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        #nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.274);
+        }
+
+        .nav-text {
+            color: #d35400;
+            font-size: 30px;
+            font-weight: 900;
+            margin-right: 2vh;
+            cursor: pointer;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            width: auto;
+
+        }
+
+        .nav-text a {
+            list-style-type: none;
+            text-decoration: none;
+            color: #d35400;
+        }
+
+        .cart-btn-link {
+            margin-right: 2vh;
+            font-size: 18px;
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cart-btn-link:hover {
+            transform: scale(1.15);
+        }
+
+        .cart-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart_count {
+            font-size: 15px;
+            font-weight: 700;
+            color: #d35400;
+            margin-bottom: 20px;
+
+        }
+
+        #category-link {
+            text-decoration: none;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            background: none;
+            width: auto;
+            margin-right: 14px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 14px;
+            padding: 4px 4px 4px 2px;
+            font-size: 15px;
+
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            padding: 10px 15px;
+            max-width: 300px;
+            height: 15px;
+            width: 100%;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .search-box button:hover {
+            color: #007bff;
+        }
+
+        #nav-bar ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            list-style-type: none;
+        }
+
+        #nav-bar ul li {
+            margin: 0 15px;
+        }
+
+        #nav-bar ul li a {
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: medium;
+            color: black;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #nav-bar ul li a:hover {
+            color: black;
+            background-color: #d35400b9;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        .nav_extra {
+            height: 50px;
+            width: 100%;
+        }
+
+        .front-page {
+
+            height: 100vh;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .first-box {
+            margin: 0px 70px;
+            text-align: start;
+            height: 100vh;
+        }
+
+        .top-content {
+            color: #d35400;
+            font-weight: 900;
+            margin-top: 10px;
+            font-size: 40px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .container-first-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .first-box-img {
+            object-fit: cover;
+            height: 48vh;
+            width: 48vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.37);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .first-box-img:hover {
+            transform: scale(1.1);
+        }
+
+        .conatiner-item-slide {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .conatiner-item-slide p {
+            margin-top: 10px;
+        }
+
+        .dishName {
+            color: #d35400;
+            font-weight: 900;
+            margin-top: 10px;
+            font-size: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.3s ease-in-out;
+            ;
+        }
+
+        .dishName:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .arrow-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .down-info {
+            display: flex;
+            justify-content: space-evenly;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .left-arrow,
+        .right-arrow {
+            background: linear-gradient(135deg, #e65100, #ff8f00);
+            height: 40px;
+            width: 70px;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-arrow:hover,
+        .right-arrow:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #e65100, #ff8f00);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-btn {
+            background: linear-gradient(135deg, #ff6f00, #d88602);
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cart-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #e65100, #ff8f00);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .second-box {
+            top: 0;
+            height: 100vh;
+
+        }
+
+        .second-box-img {
+            height: 90vh;
+            width: 96vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            margin-right: 30px;
+        }
+
+        #SHOP-SECTION {
+            height: 100vh;
+            width: 100%;
+        }
+
+        #shop {
+            height: 70vh;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shop1,
+        .shop2,
+        .shop3,
+        .shop4 {
+            height: 30vh;
+            width: 40%;
+            margin-left: 40px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shop-text {
+            margin-top: 90px;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .shop-text h1 {
+            font-size: 3rem;
+            color: #ff6600;
+            margin-top: 40px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .shop-text p {
+            font-size: 1.2rem;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* 
+        #contact {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+
+
+        #contact {
+            padding: 50px 20px;
+            height: 100vh;
+            /* background-color: #1a1a1a; */
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            background-color: #22222211;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.253);
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            ;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            color: #ff6600;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .contact-form label {
+            margin: 10px 0 5px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            background-color: #44444485;
+            box-shadow: 0 0 0 2px #ff6600;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #ff6600;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #e05500;
+        }
+
+        #about {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .about1 {
+            height: 60vh;
+            width: 100%;
+        }
+
+        .about2 {
+            height: 30vh;
+            width: 100%;
+        }
+
+        .footer {
+
+            background-color: #1a1a1a;
+            padding: 50px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .footer .about,
+        .footer .contact,
+        .footer .social {
+            flex: 1 1 250px;
+        }
+
+        .footer h3 {
+            color: #ff6600;
+            margin-bottom: 15px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        .social a {
+            margin-right: 15px;
+            font-size: 20px;
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #0d0d0d;
+            color: #777;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav-bar">
+        <ul>
+            <h4 class="nav-text"><a href="/home">Food Delivery</a></h4>
+            <li class="dropdown">
+                <button id="category-link">Category<span class="arrow">▼</span></a></button>
+            </li>
+            <a href="/cart" class="cart-btn-link"> <span class="cart-icon">🛒<p class="cart_count"></p></span> </a>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search something...">
+                <a href="#shop-section"> <button onclick="searchNow()">🔍</button> </a>
+            </div>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop-section">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <div class="nav_extra"></div>
+        <div class="front-page">
+            <div class="first-box">
+                <div class="container-first-box">
+                    <h1 class="top-content"> Hy Welcome , Food Delivery!</h1>
+                    <h3>Delicious meals delivered hot & fresh — right to your doorstep!</h3>
+                        <div class="conatiner-item-slide">
+                            <div class="img-info2">
+                                <p id="dishInfo">
+                                </p>
+                                <h1 class="dishName" id="dishName"></h1>
+                            </div>
+                            <img class="first-box-img" id="dishImage" src="" alt="">
+                        </div>
+
+                        <div class="arrow-btn">
+                            <button class="left-arrow" onclick="prevSlide()">&#8592;</button>
+                            <form action="/add-to-cart" method="POST">
+                            <button CLASS="cart-btn" onclick="cartbutton()">ADD TO CART</button>
+                        </form>
+                            <button class="right-arrow" onclick="nextSlide()">&#8594;</button>
+                        </div>
+                 
+
+                </div>
+            </div>
+            <div class="second-box">
+                <img class="second-box-img"
+                    src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9ef5ee120929119.60bb7a29ed164.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="shop-section">
+        <div class="shop-text">
+            <h1>Shop</h1>
+            <p>Explore our delicious menu and order your favorites!</p>
+        </div>
+        <div id="shop">
+            <div class="shop1">NESCAFE</div>
+            <div class="shop2">SPOON</div>
+            <div class="shop3">NUTRI CAFE</div>
+            <div class="shop4">ZAIKA</div>
+        </div>
+
+    </section>
+    <section id="contact">
+        <form class="contact-form" action="" method="post">
+            <span>NAME:</span>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <span>EMAIL:</span>
+            <input type="email" name="email" placeholder="Your Email" require>
+            <span>ADDRESS:</span>
+            <input type="text" name="adresss" placeholder="adresss" required>
+            <span>PHONE:</span>
+            <input type="text" name="phone" placeholder="Your Phone Number" required>
+            <span>MESSAGE:</span>
+            <input type="text" name="message" placeholder="Your Message" required>
+            <button type="submit">Submit</button>
+
+        </form>
+    </section>
+
+    <section id="about">
+        <div class="about1">
+            <h1>About Us</h1>
+        </div>
+        <div class="about2">
+            <footer>
+                <div class="footer">
+                    <div class="about">
+                        <h3>About CampusBites</h3>
+                        <p>CampusBites is your go-to food delivery service tailored for college students. Fast,
+                            affordable, and always delicious — we bring your favorite campus meals right to your dorm.
+                        </p>
+                    </div>
+
+                    <div class="contact">
+                        <h3>Contact</h3>
+                        <p>Email: support@campusbites.com</p>
+                        <p>Phone: +1 234 567 890</p>
+                        <p>Hours: 10 AM - 11 PM (Mon-Sat)</p>
+                    </div>
+
+                    <div class="social">
+                        <h3>Follow Us</h3>
+                        <a href="#"><i class="fab fa-facebook-f">F</i></a>
+                        <a href="#"><i class="fab fa-instagram">I</i></a>
+                        <a href="#"><i class="fab fa-twitter">T</i></a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    &copy; 2025 CampusBites. All rights reserved.
+                </div>
+            </footer>
+
+
+        </div>
+
+    </section>
+
+    <script>
+        let cart_count = document.querySelector(".cart_count");
+        let dishInfo = document.querySelector('#dishInfo');
+        let dishName = document.querySelector('#dishName');
+        let dishImage = document.querySelector("#dishImage");
+        let inputsearch = document.querySelector("#searchInput");
+        let shop = document.querySelector("#shop");
+
+        let count_cart = 0;
+        let dishes = [];
+        let currentIndex = 0;
+        fetch('/api/dishes')
+            .then(res => res.json())
+            .then(data => {
+                dishes = data.dishes;
+                showDish();
+            });
+
+        function showDish() {
+            const dish = dishes[currentIndex];
+            dishInfo.innerText = dish.description;
+            dishName.innerText = dish.name;
+            dishImage.src = dish.image;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % dishes.length;
+            showDish();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + dishes.length) % dishes.length;
+            showDish();
+        }
+
+        function cartbutton() {
+            cart_count.innerHTML = ++count_cart;
+            console.log(dishes[currentIndex]);
+        }
+
+        // fetch('/api/dishes/name')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         dishes = data.name;
+        //         showDishone();
+        //     });
+
+
+        // function showDishone() {
+
+
+        //     shop.style.display = "none";
+
+        //     shop.innerHTML = dishes;
+
+
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

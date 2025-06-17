@@ -1,0 +1,20 @@
+{
+    "dishes": [
+      {
+        "name": "Hakka Noodles",
+        "description": "Savor the bold flavors of our perfectly stir-fried Hakka Noodles, tossed with fresh veggies and signature sauces. A delicious Indo-Chinese classic that's both spicy and satisfying!",
+        "image": "https://www.cubesnjuliennes.com/wp-content/uploads/2020/06/Spicy-Chicken-Hakka-Noodles-Recipe.jpg"
+      },
+      {
+        "name": "Paneer Tikka",
+        "description": "Smoky, spicy grilled paneer cubes marinated in yogurt and spices. A vegetarian delight!",
+        "image": "https://orders.popskitchen.in/storage/2024/09/image-358-765x486.png"
+      },
+      {
+        "name": "Chicken Biryani",
+        "description": "Aromatic basmati rice layered with spiced chicken and herbs. A royal Indian feast.",
+        "image": "https://www.cookwithnabeela.com/wp-content/uploads/2025/01/ChickenBiryani.webp"
+      }
+    ]
+  }
+  
