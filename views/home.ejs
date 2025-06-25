@@ -131,16 +131,18 @@
 
         #nav-bar ul {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             margin: 0;
             padding: 0;
             height: 100%;
             list-style-type: none;
+            gap: 10px;
+
         }
 
         #nav-bar ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         #nav-bar ul li a {
@@ -167,16 +169,20 @@
         .front-page {
 
             height: 100vh;
-            display: flex;
-            justify-content: end;
+            display: grid;
+            grid-template-columns: auto auto;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
             margin-top: 10px;
+            background-color: #fff;
         }
 
         .first-box {
             margin: 0px 70px;
             text-align: start;
             height: 100vh;
+            /* position: relative; */
         }
 
         .top-content {
@@ -200,8 +206,8 @@
 
         .first-box-img {
             object-fit: cover;
-            height: 48vh;
-            width: 48vh;
+            height: 46vh;
+            width: 46vh;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.37);
             transition: transform 0.2s;
@@ -209,7 +215,7 @@
         }
 
         .first-box-img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .conatiner-item-slide {
@@ -231,7 +237,37 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             transition: transform 0.3s ease-in-out;
-            ;
+
+        }
+
+        .pricelist {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .dishprice {
+            color: #d35400;
+            align-items: center;
+            font-weight: 900;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        .pricelist .pricetext {
+            color: #d35400;
+            font-weight: 900;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .dishName:hover {
@@ -239,13 +275,31 @@
             cursor: pointer;
         }
 
-        .arrow-btn {
+        .cart-btn-outer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 30px;
+            position: relative;
+
+        }
+.button-cart {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-top: 20px;
+            position: relative;
+            margin-top: 5px;
         }
+        /* .arrow-btn {
+            position: absolute;
+            display: flex;
+           gap: 400px;
+            align-items: center;
+            margin-top: 10px;
+            width: 100%;
+        } */
 
         .down-info {
             display: flex;
@@ -267,10 +321,26 @@
             cursor: pointer;
             font-size: 20px;
             border-radius: 5px;
-            margin: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
+            
+        }
+
+        .left-arrow {
+            margin-top: 10px;
+            position: absolute;
+            left: 0px;
+            display: flex;
+           gap: 400px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .right-arrow {
+            margin-top: 30px;
+            margin-right: 50px;
+           
         }
 
         .left-arrow:hover,
@@ -294,12 +364,16 @@
             transition: all 0.3s ease-in-out;
             letter-spacing: 1px;
             font-family: 'Poppins', sans-serif;
+            margin-left: 50px;
+            /* position: absolute; */
         }
 
         .cart-btn:hover {
             transform: scale(1.05);
             background: linear-gradient(135deg, #e65100, #ff8f00);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+            cursor: pointer;
         }
 
         .second-box {
@@ -515,16 +589,9 @@
             font-size: 13px;
         }
 
-        @media (max-width: 768px) {
-            .footer {
-                flex-direction: column;
-                text-align: center;
-            }
+        
 
-            .social a {
-                margin: 0 10px;
-            }
-        }
+       
     </style>
 </head>
 
@@ -536,7 +603,7 @@
             <li class="dropdown">
                 <button id="category-link">Category<span class="arrow">▼</span></a></button>
             </li>
-            <a href="/cart" class="cart-btn-link"> <span class="cart-icon">🛒<p class="cart_count"></p></span> </a>
+            <a href="/cart" class="cart-btn-link"> <span class="cart-icon">🛒</span> </a>
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Search something...">
                 <a href="#shop-section"> <button onclick="searchNow()">🔍</button> </a>
@@ -555,30 +622,40 @@
                 <div class="container-first-box">
                     <h1 class="top-content"> Hy Welcome , Food Delivery!</h1>
                     <h3>Delicious meals delivered hot & fresh — right to your doorstep!</h3>
+                    <form action="/addcart" method="post" onsubmit="return prepareCartData()">
                         <div class="conatiner-item-slide">
                             <div class="img-info2">
-                                <p id="dishInfo">
-                                </p>
+                                <p id="dishInfo"></p>
                                 <h1 class="dishName" id="dishName"></h1>
+                                <div class="pricelist">
+                                    <h2 class="pricetext">Price: ₹ </h2>
+                                    <h2 class="dishprice" id="dishName"></h2>
+                                </div>
                             </div>
                             <img class="first-box-img" id="dishImage" src="" alt="">
                         </div>
-
-                        <div class="arrow-btn">
-                            <button class="left-arrow" onclick="prevSlide()">&#8592;</button>
-                            <form action="/add-to-cart" method="POST">
-                            <button CLASS="cart-btn" onclick="cartbutton()">ADD TO CART</button>
-                        </form>
-                            <button class="right-arrow" onclick="nextSlide()">&#8594;</button>
-                        </div>
-                 
-
+                        <!-- Hidden inputs to pass dish data -->
+                        <input type="hidden" name="name" id="cartDishName">
+                        <input type="hidden" name="image" id="cartDishImage">
+                        <input type="hidden" name="description" id="cartDishInfo">
+                        <input type="hidden" name="price" id="cartDishPrice">
+                        <input type="hidden" name="quantity" value="1" id="cartDishQuantity">
+                        <div class="button-cart">
+                            <div class="cart-btn-outer">
+                                <button type="submit" class="cart-btn">ADD TO CART</button>
+                            </div>
+                    </form>
+                    <div class="arrow-btn">
+                        <button class="left-arrow" onclick="prevSlide()">&#8592;</button>
+                        <button class="right-arrow" onclick="nextSlide()">&#8594;</button>
+                    </div>
                 </div>
             </div>
-            <div class="second-box">
-                <img class="second-box-img"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9ef5ee120929119.60bb7a29ed164.png" alt="">
-            </div>
+        </div>
+        <div class="second-box">
+            <img class="second-box-img"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9ef5ee120929119.60bb7a29ed164.png" alt="">
+        </div>
         </div>
     </section>
     <section id="shop-section">
@@ -655,6 +732,7 @@
         let dishInfo = document.querySelector('#dishInfo');
         let dishName = document.querySelector('#dishName');
         let dishImage = document.querySelector("#dishImage");
+        let dishPrice = document.querySelector(".dishprice");
         let inputsearch = document.querySelector("#searchInput");
         let shop = document.querySelector("#shop");
 
@@ -673,6 +751,7 @@
             dishInfo.innerText = dish.description;
             dishName.innerText = dish.name;
             dishImage.src = dish.image;
+            dishPrice.innerText = dish.price;
         }
 
         function nextSlide() {
@@ -685,34 +764,38 @@
             showDish();
         }
 
-        function cartbutton() {
-            cart_count.innerHTML = ++count_cart;
-            console.log(dishes[currentIndex]);
+        function searchNow() {
+            const searchTerm = inputsearch.value.toLowerCase();
+            const filteredDishes = dishes.filter(dish => dish.name.toLowerCase().includes(searchTerm));
+            if (filteredDishes.length > 0) {
+                dishes = filteredDishes;
+                currentIndex = 0;
+                showDish();
+            } else {
+                alert("No dishes found matching your search.");
+            }
         }
 
-        // fetch('/api/dishes/name')
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         dishes = data.name;
-        //         showDishone();
-        //     });
+        function prepareCartData() {
+            document.getElementById('cartDishName').value = dishes[currentIndex].name;
+            document.getElementById('cartDishImage').value = dishes[currentIndex].image;
+            document.getElementById('cartDishInfo').value = dishes[currentIndex].description;
+            document.getElementById('cartDishPrice').value = dishes[currentIndex].price;
+            console.log("Cart data prepared:", dishes[currentIndex]);
+            return true;
+        }
 
+        // function cartbutton() {
+        //     cart_count.innerHTML = ++count_cart;
+        //     console.log(dishes[currentIndex]);
+        //     const dish = dishes[currentIndex];
+        //     document.getElementById("cartDishName").value = dish.name;
+        //     document.getElementById("cartDishImage").value = dish.image;
+        //     document.getElementById("cartDishInfo").value = dish.description;
+        //     document.getElementById("cartDishPrice").value = dish.price;
 
-        // function showDishone() {
-
-
-        //     shop.style.display = "none";
-
-        //     shop.innerHTML = dishes;
-
-
-
+        //     return true; // allow form to submit
         // }
-
-
-
-
-
 
 
 

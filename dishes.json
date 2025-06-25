@@ -1,20 +1,65 @@
 {
-    "dishes": [
-      {
-        "name": "Hakka Noodles",
-        "description": "Savor the bold flavors of our perfectly stir-fried Hakka Noodles, tossed with fresh veggies and signature sauces. A delicious Indo-Chinese classic that's both spicy and satisfying!",
-        "image": "https://www.cubesnjuliennes.com/wp-content/uploads/2020/06/Spicy-Chicken-Hakka-Noodles-Recipe.jpg"
-      },
-      {
-        "name": "Paneer Tikka",
-        "description": "Smoky, spicy grilled paneer cubes marinated in yogurt and spices. A vegetarian delight!",
-        "image": "https://orders.popskitchen.in/storage/2024/09/image-358-765x486.png"
-      },
-      {
-        "name": "Chicken Biryani",
-        "description": "Aromatic basmati rice layered with spiced chicken and herbs. A royal Indian feast.",
-        "image": "https://www.cookwithnabeela.com/wp-content/uploads/2025/01/ChickenBiryani.webp"
-      }
-    ]
-  }
-  
+  "dishes": [
+    {  
+      "name": "Hakka Noodles",
+      "description": "Savor the bold flavors of our perfectly stir-fried Hakka Noodles, tossed with fresh veggies and signature sauces.",
+      "image": "https://www.cubesnjuliennes.com/wp-content/uploads/2020/06/Spicy-Chicken-Hakka-Noodles-Recipe.jpg",
+      "price": 120
+    },
+    {  
+      "name": "Paneer Tikka",
+      "description": "Smoky, spicy grilled paneer cubes marinated in yogurt and spices. A vegetarian delight!",
+      "image": "https://orders.popskitchen.in/storage/2024/09/image-358-765x486.png",
+      "price": 100
+    },
+    {
+      
+      "name": "Chicken Biryani",
+      "description": "Aromatic basmati rice layered with spiced chicken and herbs. A royal Indian feast.",
+      "image": "https://www.cookwithnabeela.com/wp-content/uploads/2025/01/ChickenBiryani.webp",
+      "price": 250
+    },
+    {
+      
+      "name": "Burger",
+      "description": "Juicy beef patty with fresh lettuce, tomato, and our special sauce, served in a toasted bun.",
+      "image": "https://www.foodandwine.com/thmb/jldKZBYIoXJWXodRE9ut87K8Mag=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg",
+      "price": 100
+    },
+    {
+      
+      "name": "Pasta Primavera",
+      "description": "A colorful medley of seasonal vegetables tossed with pasta in a light garlic sauce.",
+      "image": "https://thecozycook.com/wp-content/uploads/2024/02/Pasta-Primavera-1-.jpg",
+      "price": 180
+    },
+    {
+      
+      "name": "Caesar Salad",
+      "description": "Crisp romaine lettuce, croutons, and parmesan cheese tossed in a creamy Caesar dressing.",
+      "image": "https://www.feastingathome.com/wp-content/uploads/2021/10/Caesar-salad-recipe-800x1200.jpg",
+      "price":  90
+    },
+    {
+      
+      "name": "Chocolate Lava Cake",
+      "description": "Indulge in our rich chocolate cake with a molten chocolate center, served with vanilla ice cream.",
+      "image": "https://images.getrecipekit.com/20250325120225-how-20to-20make-20chocolate-20molten-20lava-20cake-20in-20the-20microwave.png?width=650&quality=90&",
+      "price": 150
+    },
+    {
+    
+      "name": "Mango Lassi",
+      "description": "A refreshing yogurt-based drink blended with ripe mangoes and a hint of cardamom.",
+      "image": "https://www.midwestliving.com/thmb/qYwifjkqEXjtpZjHDzxW5yqjboM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(1909x1167:1911x1169):format(webp)/KeyIngredient_MangoLassi_BP_1019_preview-0bdf9f28d35043748efaa9fd1c7b806c.jpg",
+      "price": 70
+    },
+    {
+     
+      "name": "Masala Chai",
+      "description": "A traditional Indian spiced tea brewed with aromatic spices and milk.",
+      "image": "https://cdn.shopify.com/s/files/1/0758/6929/0779/files/Masala_Tea_-_Annams_Recipes_Shop_2_480x480.jpg?v=1732347934",
+      "price": 50
+    }
+  ]
+}
